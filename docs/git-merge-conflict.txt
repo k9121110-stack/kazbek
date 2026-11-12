@@ -1,0 +1,75 @@
+Git конфликтін түзету: нақты терминал журналы
+Орта: Codex Cloud Linux; пайдаланушының жеке компьютері емес.
+Бұрынғы PR тарихы сақталды.
+
+$ git config user.name k9121110-stack
+
+$ git config user.email k9121110@gmail.com
+
+$ git switch -c feature-title main
+Switched to a new branch 'feature-title'
+
+$ git add README.md
+
+$ git commit -m feature-title: README тақырыбын өзгерту
+[feature-title 31a3b89] feature-title: README тақырыбын өзгерту
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+$ git switch main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+$ git add README.md
+
+$ git commit -m main: README тақырыбын өзгерту
+[main 7104323] main: README тақырыбын өзгерту
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+$ git merge feature-title
+Auto-merging README.md
+CONFLICT (content): Merge conflict in README.md
+Automatic merge failed; fix conflicts and then commit the result.
+
+$ git status --short
+UU README.md
+
+README.md (конфликт кезінде):
+<<<<<<< HEAD
+# Қазбек — мен туралы
+=======
+# Қазбек — Git үйрену жобасы
+>>>>>>> feature-title
+
+Менің атым Қазбек.
+Мен бағдарламалауды үйреніп жүрмін.
+Git және GitHub арқылы жобаларымды басқаруды үйренемін.
+
+Бұл README файлы GitHub-та жаңартылды.
+
+## Конфликтті шешу
+
+Екі тармақтың тақырыбы келісілді және өзгерістер біріктіруге дайын.
+
+## Командалық жұмыс
+
+Бұл жол Pull Request арқылы өзгеріс ұсынуды көрсету үшін қосылды.
+
+## GitHub-пен жұмыс
+
+Бұл бөлім 4-практикалық тапсырма үшін GitHub репозиторийінде жаңартылды. Өзгерісті жергілікті компьютерге `git pull origin main` командасымен алуға болады.
+
+GitHub сайтындағы жаңа өзгеріс: 4-тапсырмадағы git pull тәжірибесін тексеру.
+
+$ git add README.md
+
+$ git diff --cached --check
+
+$ git commit -m README конфликтін main ішінде merge кезінде шешу
+[main ba57d00] README конфликтін main ішінде merge кезінде шешу
+
+$ git show --no-patch --format=commit %H%nparents %P%nsubject %s HEAD
+commit ba57d001b6690c8d34ebbee53071a8a26cc876b2
+parents 7104323728b68218972cac6a9f649c42d8083949 31a3b89b624f794b61cbf99868c96439a0bb404d
+subject README конфликтін main ішінде merge кезінде шешу
+
+$ git status --short
