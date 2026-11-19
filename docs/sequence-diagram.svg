@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="820" viewBox="0 0 1200 820">
+<defs>
+  <marker id="arrow" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 Z" fill="#263238"/></marker>
+  <marker id="return" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 Z" fill="#607d8b"/></marker>
+  <style>
+    .title{font: bold 27px Arial,sans-serif;fill:#172b4d}
+    .sub{font:16px Arial,sans-serif;fill:#455a64}
+    .head{fill:#e8f0fe;stroke:#4267a9;stroke-width:2;rx:9}
+    .actor{fill:#fff7e6;stroke:#bd7b16;stroke-width:2}
+    .name{font:bold 17px Arial,sans-serif;fill:#172b4d;text-anchor:middle}
+    .life{stroke:#90a4ae;stroke-width:2;stroke-dasharray:7 7}
+    .msg{stroke:#263238;stroke-width:2;fill:none;marker-end:url(#arrow)}
+    .ret{stroke:#607d8b;stroke-width:2;stroke-dasharray:8 6;fill:none;marker-end:url(#return)}
+    .label{font:16px Arial,sans-serif;fill:#263238}
+    .num{font:bold 15px Arial,sans-serif;fill:#0d47a1}
+    .note{font:14px Arial,sans-serif;fill:#455a64}
+  </style>
+</defs>
+<rect width="1200" height="820" fill="#ffffff"/>
+<text x="600" y="42" class="title" text-anchor="middle">Sequence Diagram — Асханада тағамға тапсырыс беру</text>
+<text x="600" y="70" class="sub" text-anchor="middle">Негізгі сценарий: клиент тағам таңдап, тапсырысты рәсімдеп, төлем жасайды</text>
+<!-- participant headers -->
+<circle cx="115" cy="125" r="13" class="actor"/><path d="M115 138 L115 166 M94 149 L136 149 M115 166 L97 190 M115 166 L133 190" stroke="#bd7b16" stroke-width="3" fill="none"/>
+<text x="115" y="215" class="name">Клиент</text>
+<rect x="260" y="112" width="170" height="58" class="head"/><text x="345" y="147" class="name">orderPage</text>
+<rect x="490" y="112" width="150" height="58" class="head"/><text x="565" y="147" class="name">menu</text>
+<rect x="710" y="112" width="150" height="58" class="head"/><text x="785" y="147" class="name">order</text>
+<rect x="950" y="112" width="180" height="58" class="head"/><text x="1040" y="147" class="name">paymentService</text>
+<!-- lifelines -->
+<path d="M115 225 V770 M345 175 V770 M565 175 V770 M785 175 V770 M1040 175 V770" class="life"/>
+<!-- messages -->
+<path d="M115 255 H345" class="msg"/><text x="230" y="244" class="label" text-anchor="middle">openMenu()</text><text x="125" y="239" class="num">1.</text>
+<path d="M345 300 H565" class="msg"/><text x="455" y="289" class="label" text-anchor="middle">getAvailableDishes()</text><text x="355" y="284" class="num">2.</text>
+<path d="M565 345 H345" class="ret"/><text x="455" y="334" class="label" text-anchor="middle">dishesList</text>
+<path d="M115 395 H345" class="msg"/><text x="230" y="384" class="label" text-anchor="middle">selectDish(dishId, qty)</text><text x="125" y="379" class="num">3.</text>
+<path d="M345 440 H785" class="msg"/><text x="565" y="429" class="label" text-anchor="middle">addItem(dishId, qty)</text><text x="355" y="424" class="num">4.</text>
+<path d="M785 485 H345" class="ret"/><text x="565" y="474" class="label" text-anchor="middle">itemAdded</text>
+<path d="M345 530 H785" class="msg"/><text x="565" y="519" class="label" text-anchor="middle">calculateTotal()</text><text x="355" y="514" class="num">5.</text>
+<path d="M785 575 H345" class="ret"/><text x="565" y="564" class="label" text-anchor="middle">totalAmount</text>
+<path d="M345 620 H1040" class="msg"/><text x="692" y="609" class="label" text-anchor="middle">processPayment(orderId, totalAmount)</text><text x="355" y="604" class="num">6.</text>
+<path d="M1040 665 H345" class="ret"/><text x="692" y="654" class="label" text-anchor="middle">paymentResult(success)</text>
+<path d="M345 710 H115" class="msg"/><text x="230" y="699" class="label" text-anchor="middle">showConfirmation(orderId)</text><text x="125" y="694" class="num">7.</text>
+<text x="600" y="790" class="note" text-anchor="middle">Тұтас сызық — әдісті шақыру; пунктир — қайтарылатын жауап</text>
+</svg>
