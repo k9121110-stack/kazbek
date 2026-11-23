@@ -24,10 +24,10 @@
 <text x="115" y="215" class="name">Клиент</text>
 <text x="115" y="237" class="note" text-anchor="middle">Актор</text>
 <!-- objects: objectName:ClassName -->
-<rect x="220" y="112" width="250" height="58" class="head"/><text x="345" y="147" class="name">orderPage:OrderPage</text>
-<rect x="480" y="112" width="170" height="58" class="head"/><text x="565" y="147" class="name">menu:Menu</text>
-<rect x="700" y="112" width="170" height="58" class="head"/><text x="785" y="147" class="name">order:Order</text>
-<rect x="900" y="112" width="280" height="58" class="head"/><text x="1040" y="147" class="name">paymentService:PaymentService</text>
+<rect x="220" y="112" width="250" height="58" class="head"/><text x="345" y="147" class="name">:OrderPage</text>
+<rect x="480" y="112" width="170" height="58" class="head"/><text x="565" y="147" class="name">:Menu</text>
+<rect x="700" y="112" width="170" height="58" class="head"/><text x="785" y="147" class="name">:Order</text>
+<rect x="900" y="112" width="280" height="58" class="head"/><text x="1040" y="147" class="name">:PaymentService</text>
 <!-- lifelines -->
 <path d="M115 245 V770 M345 175 V770 M565 175 V770 M785 175 V770 M1040 175 V770" class="life"/>
 <!-- messages -->
@@ -42,6 +42,6 @@
 <path d="M345 620 H1040" class="msg"/><text x="692" y="609" class="label" text-anchor="middle">processPayment(orderId, totalAmount)</text><text x="355" y="604" class="num">6.</text>
 <path d="M1040 665 H345" class="ret"/><text x="692" y="654" class="label" text-anchor="middle">paymentResult(success)</text>
 <path d="M345 710 H115" class="msg"/><text x="230" y="699" class="label" text-anchor="middle">showConfirmation(orderId)</text><text x="125" y="694" class="num">7.</text>
-<text x="600" y="760" class="note" text-anchor="middle">Клиент — актор; қалған қатысушылар — объектілер (объект:Класс)</text>
+<text x="600" y="760" class="note" text-anchor="middle">Клиент — актор; қалған қатысушылар — объектілер (талаптағы :ClassName)</text>
 <text x="600" y="790" class="note" text-anchor="middle">Тұтас сызық — шақыру; пунктир — қайтарылатын жауап</text>
 </svg>
